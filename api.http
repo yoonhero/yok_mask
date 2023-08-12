@@ -1,0 +1,6 @@
+POST http://127.0.0.1:5000 HTTP/1.1
+content-type: application/json
+
+{
+    "text": "씨발 비판.. 까는 건 쉽지.."
+}
