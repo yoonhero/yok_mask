@@ -13,6 +13,8 @@ def load_nsmc():
         temp = d.split("\t")
         index = temp[0]
         label = temp[-1]
+        if label not in ["0", "1"]:
+            continue
         # document = " ".join(temp[1:-1])
         try:
             document = temp[1]
@@ -32,7 +34,9 @@ def load_curse_detection():
     y = []
     for d in data:
         temp = d.split("|")
-        label = [-1]
+        label = temp[-1]
+        if label not in ["0", "1"]:
+            continue
         document = temp[0] if len(temp) == 2 else "|".join(temp[:-1])
         x.append(document)
         y.append(label)

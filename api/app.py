@@ -4,6 +4,7 @@ import numpy as np
 
 from tokenizer import Tokenizer
 
+
 app = Flask(__name__)
 CORS(app)
 
