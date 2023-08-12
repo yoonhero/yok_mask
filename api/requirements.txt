@@ -1,0 +1,4 @@
+onnxruntime==1.15.1
+numpy
+Flask
+Flask-Cors
