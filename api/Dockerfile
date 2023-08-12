@@ -9,4 +9,4 @@ RUN pip3 install gunicorn
 ADD . .
 
 EXPOSE 5000
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "server:app"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
