@@ -25,7 +25,7 @@ def prepare_dataset(max_len):
 
     train_dataset = SimpleDataSet(x[:-1000], y[:-1000], max_len)
     eval_dataset = SimpleDataSet(x[-1000:], y[-1000:], max_len)
-    train_loader = DataLoader(train_dataset, 2048, drop_last=True)
+    train_loader = DataLoader(train_dataset, 1024, drop_last=True)
     eval_loader = DataLoader(eval_dataset, 256)
     
     return train_loader, eval_loader
@@ -95,6 +95,7 @@ def train(token_size, emb_size=100, out="./checkpoint/word2vec.pt"):
             prod = torch.squeeze(prod, 1)
             loss = criterion(prod.to(torch.float32), y.to(torch.float32))
             loss.backward()
+            torch.nn.utils.clip_grad_norm_(model.parameters(), 2.0)
             optimizer.step()
             optimizer.zero_grad(set_to_none=True)
 
