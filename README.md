@@ -24,12 +24,10 @@ docker run -p 5000:5000 -d ghcr.io/yoonhero/yok2vec:latest
 
 ## Usage 
 
-준비중
-
 **API**
 
 ```
-POST https://yoonhero.hopto.org/chk
+POST http://yoonhero.hopto.org/chk
 ```
 
 **Request**
@@ -38,6 +36,7 @@ POST https://yoonhero.hopto.org/chk
 | --- | --- | --- |
 | `text` | `string` | Required. 마스킹 할 문장 | 
 | `to` | `string` | Optional. 마스킹 문자열 |
+| `min_sim` | `float` | Optional. 마스킹을 할 때의 최소 유사도 |
 
 
 **Request**
