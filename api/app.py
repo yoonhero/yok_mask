@@ -123,7 +123,8 @@ def upload_train():
     
     print(result)
 
-    return jsonify({"result":result, "sim": similarity}), 200
+    # return jsonify({"result":result, "sim": similarity}), 200
+    return jsonify({"result": result}), 200
 
 if __name__ == "__main__":
     app.run(port=5555, host='0.0.0.0', debug=True, threaded=True)
