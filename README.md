@@ -27,7 +27,7 @@ docker run -p 5000:5000 -d ghcr.io/yoonhero/yok2vec:latest
 **API**
 
 ```
-POST http://yoonhero.hopto.org/chk
+POST https://yoonhero.hopto.org/chk
 ```
 
 **Request**
